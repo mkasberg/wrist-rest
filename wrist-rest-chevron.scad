@@ -98,33 +98,18 @@ translate([10, 0, 0]) intersection() {
     wrist_rest();
     translate([design_inset, 0, 0]) cutter(false);
   }
-  translate([design_inset + depth / 6, 0, 0]) cutter(true);
+  translate([design_inset + 0.6 * depth, 0, 0]) cutter(true);
 }
 
 translate([20, 0, 0]) intersection() {
   difference() {
     wrist_rest();
-    translate([design_inset + depth / 6, 0, 0]) cutter(false);
-  }
-  translate([design_inset + depth / 6 + depth / 8, 0, 0]) cutter(true);
-}
-
-translate([30, 0, 0]) intersection() {
-  difference() {
-    wrist_rest();
-    translate([design_inset + depth / 6 + depth / 8, 0, 0]) cutter(false);
-  }
-  translate([design_inset + 2 * depth / 6 + depth / 8, 0, 0]) cutter(true);
-}
-translate([40, 0, 0]) intersection() {
-  difference() {
-    wrist_rest();
-    translate([design_inset + 2 * depth / 6 + depth / 8, 0, 0]) cutter(false);
+    translate([design_inset + 0.6 * depth, 0, 0]) cutter(false);
   }
   translate([extra_cut_inset, 0, 0]) cutter(true);
 }
 
-translate([50, 0, 0]) difference() {
+translate([30, 0, 0]) difference() {
   wrist_rest();
   translate([extra_cut_inset, 0, 0]) cutter(false);
 }
