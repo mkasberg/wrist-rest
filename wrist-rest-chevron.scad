@@ -6,9 +6,6 @@ by Mike Kasberg
 Default size optimized for WASD tenkeyless keyboards.
 
 Tip: Print upside down for a smooth top and slightly rough/grippy bottom!
-
-Use your slicer to cut for printing if needed.
-https://help.prusa3d.com/article/cut-tool_1779
 */
 
 // COMMON LENGTHS:
@@ -32,7 +29,7 @@ corner_radius = 4;
 // How far from the left to inset the design.
 design_inset = 125;
 
-// Extra cut on the right sie for smaller printers. 
+// Extra cut on the right sie for smaller printers. 0 for none.
 extra_cut_inset = 290;
 
 // Depth tolerance for connecting pins.
@@ -101,15 +98,22 @@ translate([10, 0, 0]) intersection() {
   translate([design_inset + 0.6 * depth, 0, 0]) cutter(true);
 }
 
-translate([20, 0, 0]) intersection() {
-  difference() {
+if (extra_cut_inset > 0) {
+  translate([20, 0, 0]) intersection() {
+    difference() {
+      wrist_rest();
+      translate([design_inset + 0.6 * depth, 0, 0]) cutter(false);
+    }
+    translate([extra_cut_inset, 0, 0]) cutter(true);
+  }
+
+  translate([30, 0, 0]) difference() {
+    wrist_rest();
+    translate([extra_cut_inset, 0, 0]) cutter(false);
+  }
+} else {
+  translate([20, 0, 0]) difference() {
     wrist_rest();
     translate([design_inset + 0.6 * depth, 0, 0]) cutter(false);
   }
-  translate([extra_cut_inset, 0, 0]) cutter(true);
-}
-
-translate([30, 0, 0]) difference() {
-  wrist_rest();
-  translate([extra_cut_inset, 0, 0]) cutter(false);
 }
