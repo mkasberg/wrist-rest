@@ -4,6 +4,8 @@ A 3D-printable keyboard wrist rest in [OpenSCAD](https://openscad.org/downloads.
 
 **[Keyboard Wrist Rest (Chevron) on Printables](https://www.printables.com/model/764510-keyboard-wrist-rest-chevron)**
 
+![3D printed wrist rest](wrist-rest.jpg)
+
 A wrist rest that looks great next to your mechanical keyboard! Add some personality to your battle station by printing this in your favorite colors!
 
 The wrist rest is broken up into multiple sections with a chevron design. This allows you to print interesting color combinations and also means you can print this wrist rest on smaller printers – I printed mine on a MINI!
